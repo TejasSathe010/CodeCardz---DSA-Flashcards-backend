@@ -1,0 +1,50 @@
+# Node modules
+/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables file
+.env
+
+# TypeScript build output
+/dist
+/build
+
+# Optional: TypeScript cache
+/.tsbuildinfo
+
+# Optional: VSCode settings folder
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# IDE/Editor-specific folders
+.idea/
+.vscode/
+
+# Operating system files
+Thumbs.db
+ehthumbs.db
+
+# Coverage directory for testing tools
+/coverage/
+
+# Docker related files
+docker-compose.override.yml
+docker-compose.yml
+
+# npm package lock
+/package-lock.json
+
+# yarn lock
+/yarn.lock
+
+# Temporary files and directories
+*.tmp
+*.swp
