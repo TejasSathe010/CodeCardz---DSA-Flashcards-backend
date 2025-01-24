@@ -3,7 +3,7 @@ import User from "../models/userModel";
 import generateToken from "../utils/generateToken";
 
 export const registerUser = async (req: Request, res: Response): Promise<any> => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -16,6 +16,7 @@ export const registerUser = async (req: Request, res: Response): Promise<any> =>
       username,
       email,
       password,
+      role: role || "User",
     });
 
     if (user) {
@@ -23,6 +24,7 @@ export const registerUser = async (req: Request, res: Response): Promise<any> =>
         _id: user.id,
         username: user.username,
         email: user.email,
+        role: user.role,
         token: generateToken(user._id.toString()),
       });
     } else {

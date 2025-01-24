@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
+import problemRoutes from './routes/problemRoutes';
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ mongoose
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
 app.use('/api/auth', authRoutes);
+app.use('/api', problemRoutes);
+
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to the DSA Flashcard App Backend!');
