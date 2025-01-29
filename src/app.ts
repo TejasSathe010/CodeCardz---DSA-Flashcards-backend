@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import problemRoutes from './routes/problemRoutes';
+import reviewRoutes from './routes/reviewRoutes';
 
 dotenv.config();
 
@@ -18,7 +19,9 @@ mongoose
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
 app.use('/api/auth', authRoutes);
-app.use('/api', problemRoutes);
+app.use('/api/problems', problemRoutes);
+app.use('/api/review', reviewRoutes);
+
 
 
 app.get('/', (req: Request, res: Response) => {

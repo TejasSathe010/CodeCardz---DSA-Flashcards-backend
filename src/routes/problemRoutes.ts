@@ -4,8 +4,8 @@ import { createProblems, getProblems } from "../controllers/problemController";
 
 const router = express.Router();
 
-router.post("/problems", protect, authorize("Admin"), createProblems);
+router.post("/", protect, authorize("Admin"), createProblems);
 
-router.get("/problems", getProblems);
+router.get("/", getProblems);
 
 export default router;
